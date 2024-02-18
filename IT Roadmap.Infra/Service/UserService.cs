@@ -30,10 +30,10 @@ namespace IT_Roadmap.Infra.Service
             return _userRepository.GetAllUsers();
         }
 
-        public List<AllUsersEmails> GetAllUsersEmail()
-        {
-            return _userRepository.GetAllUsersEmail();
-        }
+        //public List<AllUsersEmails> GetAllUsersEmail()
+        //{
+        //    return _userRepository.GetAllUsersEmail();
+        //}
 
         public User GetUserById(decimal id)
         {

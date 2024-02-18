@@ -29,6 +29,10 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddScoped<ITestmonialRepository, TestmonialRepository>();
 builder.Services.AddScoped<ITestimonialService, TestimonialService>();
+
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
+builder.Services.AddScoped<ILoginService, LoginService>();
+
 builder.Services.AddControllers();
 
 builder.Services.AddControllers();
