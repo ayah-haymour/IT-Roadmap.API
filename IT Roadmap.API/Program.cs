@@ -33,9 +33,14 @@ builder.Services.AddScoped<ITestimonialService, TestimonialService>();
 builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 
-builder.Services.AddControllers();
+builder.Services.AddScoped<IJWTRepository, JWTRepository>();
+builder.Services.AddScoped<IJWTService, JWTService>();
+
+
+
 
 builder.Services.AddControllers();
+
 
 
 builder.Services.AddCors(corsOptions =>
@@ -47,7 +52,8 @@ builder.Services.AddCors(corsOptions =>
     });
 });
 
-builder.Services.AddAuthentication(opt => {
+builder.Services.AddAuthentication(opt =>
+{
     opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
@@ -76,7 +82,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseCors("policy");
 app.MapControllers();
 
 app.Run();

@@ -1,5 +1,6 @@
 ﻿using IT_Roadmap.Core.Common;
 using IT_Roadmap.Core.Data;
+using IT_Roadmap.Core.DTO;
 using IT_Roadmap.Core.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -33,12 +34,12 @@ namespace IT_Roadmap.API.Controllers
             return _userService.GetUserCount();
         }
 
-        //[HttpGet]
-        //[Route("GetAllUsersEmail")]
-        //public ActionResult<List<AllUsersEmails>> GetAllUsersEmail()
-        //{
-        //    return _userService.GetAllUsersEmail();
-        //}
+        [HttpGet]
+        [Route("GetAllUsersEmail")]
+        public ActionResult<List<AllUsersEmails>> GetAllUsersEmail()
+        {
+            return _userService.GetAllUsersEmail();
+        }
 
         [HttpGet]
         [Route("GetUserById/{id}")]
@@ -84,7 +85,7 @@ namespace IT_Roadmap.API.Controllers
         {
             var file = Request.Form.Files[0];
             var fileName = Guid.NewGuid().ToString() + "_" + file.FileName;
-            var fullPath = Path.Combine("C:\\Users\\Mohamed\\pharma\\PharmaFinder-Angular\\src\\assets\\Images", fileName);
+            var fullPath = Path.Combine("C:\\Users\\Amjad\\IT_Roadmap\\src\\assets\\Images", fileName);
             using (var stream = new FileStream(fullPath, FileMode.Create))
             {
                 file.CopyTo(stream);

@@ -1,4 +1,5 @@
 ﻿using IT_Roadmap.Core.Data;
+using IT_Roadmap.Core.DTO;
 using IT_Roadmap.Core.Repository;
 using IT_Roadmap.Core.Service;
 using System;
@@ -30,10 +31,10 @@ namespace IT_Roadmap.Infra.Service
             return _userRepository.GetAllUsers();
         }
 
-        //public List<AllUsersEmails> GetAllUsersEmail()
-        //{
-        //    return _userRepository.GetAllUsersEmail();
-        //}
+        public List<AllUsersEmails> GetAllUsersEmail()
+        {
+            return _userRepository.GetAllUsersEmail();
+        }
 
         public User GetUserById(decimal id)
         {

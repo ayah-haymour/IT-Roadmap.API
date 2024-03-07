@@ -1,4 +1,5 @@
 ﻿using IT_Roadmap.Core.Data;
+using IT_Roadmap.Core.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace IT_Roadmap.Core.Service
         public int GetUserCount();
         List<User> GetAllUsers();
 
-        //List<AllUsersEmails> GetAllUsersEmail();
+        List<AllUsersEmails> GetAllUsersEmail();
 
         User GetUserById(decimal id);
         void CreateUser(User userData);
